@@ -32,7 +32,7 @@ namespace ConsoleUI
             */
 
             // Create a list of Vehicle called vehicles
-            var vehicles = new List<string>();
+            var vehicles = new List<Vehicle>();
 
 
             /*
@@ -40,10 +40,10 @@ namespace ConsoleUI
              * - new it up as one of each derived class
              * Set the properties with object initializer syntax
              */
-            var van = new Car();
-            var bicycle = new Motorcycle();
-            var truck = new Vehicle();
-            var anActualSheep = new Vehicle();
+            Car van = new Car() {HasTrunk = true, CarType = "Van", Year = 2010, };
+            Motorcycle bicycle = new Motorcycle() {NumOfWheels = 2 };
+            Vehicle truck = new Car();
+            Vehicle anActualSheep = new Motorcycle();
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate over each of the properties
