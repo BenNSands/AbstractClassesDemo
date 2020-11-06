@@ -4,7 +4,19 @@ using System.Text;
 
 namespace ConsoleUI
 {
-    class Motorcycle
+    class Motorcycle : Vehicle
     {
+
+        public int GasMileage { get; set; }
+        public int NumOfWheels { get; set; }
+
+        public override void DriveAbstract()
+        {
+           // throw new NotImplementedException();
+        }
+        public override void DriveVirtual()
+        {
+            base.DriveVirtual();
+        }
     }
 }

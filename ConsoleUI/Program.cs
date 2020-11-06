@@ -40,18 +40,28 @@ namespace ConsoleUI
              * - new it up as one of each derived class
              * Set the properties with object initializer syntax
              */
-            Car van = new Car() {HasTrunk = true, CarType = "Van", Year = 2010, };
+            Car van = new Car() {Make  = "Ford", HasTrunk = true, CarType = "Van", Year = 2010, };
             Motorcycle bicycle = new Motorcycle() {NumOfWheels = 2 };
             Vehicle truck = new Car();
-            Vehicle anActualSheep = new Motorcycle();
+            Vehicle anActualSheep = new Motorcycle() { NumOfWheels = 0, GasMileage = 99999999};
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate over each of the properties
              */
 
+            vehicles.Add(van);
+            vehicles.Add(truck);
+            vehicles.Add(bicycle);
+            vehicles.Add(anActualSheep);
+            foreach (var item in vehicles)
+            {
+                Console.WriteLine($"Make: {item.Make} Model: {item.Model} Year: {item.Year}");
+                item.DriveAbstract();
+            }
             // Call each of the drive methods for one car and one motorcycle
-
-            #endregion            
+            anActualSheep.DriveVirtual();
+            van.DriveAbstract();
+            #endregion
             Console.ReadLine();
         }
     }
